@@ -16,7 +16,7 @@ namespace TheroToHeroCRUDInVSCode
             var student = await sudentRepository.UpdateAsync(new Student 
             { 
                 Id = 1, 
-                FullName = "MUhammadhon Najimov",
+                FullName = "Shavkatbek Jo'rayev",
             }); 
             
             WriteLine(student.FullName);

@@ -11,13 +11,15 @@ namespace TheroToHeroCRUDInVSCode
         static async Task Main(string[] args)
         {
             ISudentRepository sudentRepository = new StudentRepository();
-            var student = await sudentRepository.GetAllAsync();
-            var student2 = await sudentRepository.GetAllAsync( x => x.Id > 1); 
-
-            foreach (var item in student2)
-            {
-                WriteLine(item.Id + " " + item.FullName + " " + item.UniversityId + " " + item.GroupId);
-            }
+            // var student = await sudentRepository.GetAsync(x => x.Id == 1);
+            // WriteLine(student.FullName);
+            var student = await sudentRepository.UpdateAsync(new Student 
+            { 
+                Id = 1, 
+                FullName = "MUhammadhon Najimov",
+            }); 
+            
+            WriteLine(student.FullName);
         }
 
         #pragma warning restore // The field 'Program.studentRepository' is never used
